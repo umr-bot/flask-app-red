@@ -1,0 +1,17 @@
+{#% block content %#}
+{% set active_page="home" %}
+
+{#% include 'nav.html' %#}
+<p2>YO</p2>
+{#home_bp static points to static/images!#}
+<link rel="stylesheet" href="{{url_for(".static", filename="nav.css")}}"> 
+{#% include url_for("home_bp.templates/home", filename="nav.jinja2") %#}
+{% include 'nav.jinja2' %}
+{#NOTE: 'home_bp.static' is used instead of just 'static'#}
+<img src="{{url_for("home_bp.static", filename="images/mountain_side.png")}}">
+  <div class="container">
+    <h1>{{ title }}</h1>
+    <h2>{{ subtitle }}</h2>
+  </div>
+
+{#% endblock %#}

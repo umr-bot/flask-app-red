@@ -1,0 +1,12 @@
+{% extends "layout.jinja2" %}
+
+<p2>Am I displying?</p2>
+{% block content %}
+{#NOTE: 'home_bp.static' is used instead of just 'static'#}
+<img src="{{url_for("home_bp.static", filename="mountain_side.png")}}">
+  <div class="container">
+    <h1>{{ title }}</h1>
+    <h2>{{ subtitle }}</h2>
+  </div>
+
+{% endblock %}
