@@ -1,17 +1,20 @@
 {% set navigation_bar = [
     ('/', 'layout', 'Layout'),
-    ('/home/', 'home', 'Home')
+    ('/home/', 'home', 'Home'),
+    ('/about/','about','About')
 ] -%}
 {% set active_page = active_page|default('home') -%}
 
 {% block nav %}
 <ul id="navigation">
+    <div class="flex-container">
     {% for href, id, caption in navigation_bar %}
         <li
             {% if id == active_page %} class="active"{% endif %}>
-            <a href="{{ href|e }}">{{ caption|e }}</a>
+            <a class={{"flex-"~id}} href="{{ href|e }}">{{ caption|e }}</a>
         </li>
     {% endfor %}
+    </div>
 </ul>
 
 <div class="flex-container">

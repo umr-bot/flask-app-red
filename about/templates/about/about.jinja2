@@ -1,0 +1,8 @@
+{#% block content %#}
+{% set active_page="about" %}
+
+<h1>About</h1>
+{#home_bp static points to static/images!#}
+<link rel="stylesheet" href="{{url_for(".static", filename="nav.css")}}"> 
+{#% include url_for("home_bp.templates/home", filename="nav.jinja2") %#}
+{% include 'nav.jinja2' %}

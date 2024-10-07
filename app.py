@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 from flask import url_for
 from home import home
+from about import about
 
 app = Flask(__name__)
 
@@ -17,4 +18,4 @@ def root(): return render_template(
     )
 
 app.register_blueprint(home.home_bp, url_prefix='/home', template_folder='templates',static_folder='static')
-
+app.register_blueprint(about.about_bp, url_prefix='/about', template_folder='templates',static_folder='static')
